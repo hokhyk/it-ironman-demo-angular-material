@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { FormGroup, FormControl, ValidatorFn, Validators, FormGroupDirective, NgForm } from '@angular/forms';
-import { Component, OnInit, ViewChildren, QueryList, HostListener } from '@angular/core';
+import { Component, OnInit, ViewChildren, QueryList, HostListener, Injectable } from '@angular/core';
 import {
   MatStepperIntl,
   ErrorStateMatcher,
@@ -19,11 +19,13 @@ import { AfterViewInit } from '@angular/core/src/metadata/lifecycle_hooks';
 import { UP_ARROW, DOWN_ARROW } from '@angular/cdk/keycodes';
 import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
 
+@Injectable()
 export class TwStepperIntl extends MatStepperIntl {
   optionalLabel = '非必填';
 }
 
 // 調整時機為invalid + dirty即顯示錯誤訊息
+@Injectable()
 export class EarlyErrorStateMatcher implements ErrorStateMatcher {
   isErrorState(control: FormControl | null, form: FormGroupDirective | NgForm | null): boolean {
     const isSubmitted = form && form.submitted;

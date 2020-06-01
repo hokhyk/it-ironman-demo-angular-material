@@ -21,8 +21,9 @@ import { HttpClientModule } from '@angular/common/http';
      * 接著打開src/pollyills.ts檔案，找到import 'web-animations-js'這一行，並且把它取消註解掉，如果找不到這一行，也可以直接手動加入就好。
     **/
    BrowserAnimationsModule,
-    NoopAnimationsModule, //雖然動畫效果會讓畫面更加豐富，但也有可能會有效能問題，且不是每個人都喜歡那麼多的特效，想要取消特效的話，可以改加入NoopAnimationsModule
-    SharedMaterialModule
+   //雖然動畫效果會讓畫面更加豐富，但也有可能會有效能問題，且不是每個人都喜歡那麼多的特效，想要取消特效的話，可以改加入NoopAnimationsModule
+   NoopAnimationsModule,
+   SharedMaterialModule
   ],
   providers: [],
   bootstrap: [AppComponent]
